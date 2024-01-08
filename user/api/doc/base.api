@@ -1,0 +1,15 @@
+syntax = "v1"
+
+
+type (
+    RegisterReq {
+        Mobile string  `json:"mobile"`
+        Password string `json:"password"`
+    }
+    RegisterResq {
+        AccessToken  string `json:"accessToken"`
+        AccessExpire int64  `json:"accessExpire"`
+        RefreshAfter int64  `json:"refreshAfter"`
+    }
+)
+
