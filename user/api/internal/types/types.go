@@ -19,3 +19,14 @@ type TestReq struct {
 type TestResp struct {
 	Info string `json:"info"`
 }
+
+type UserLoginReq struct {
+	Mobile   string `json:"mobile" validate:"required,email"`
+	Password string `json:"password" validate:"required,password"`
+}
+
+type UserLoginResq struct {
+	AccessToken  string `json:"accessToken"`
+	AccessExpire int64  `json:"accessExpire"`
+	RefreshAfter int64  `json:"refreshAfter"`
+}

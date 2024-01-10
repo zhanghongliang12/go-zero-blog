@@ -31,3 +31,13 @@ service user{
 	@handler hello_world
 	get  /user/hello_world (TestReq) returns (TestResp)
 }
+
+@server (
+	prefix : user/v1
+	group: user
+)
+service user{
+	@doc "login"
+	@handler login
+	post /user/login () returns (TestResp)
+}

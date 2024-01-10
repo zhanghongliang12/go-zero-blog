@@ -23,3 +23,16 @@ type (
 )
 
 
+type (
+    UserLoginReq{
+        Mobile string  `json:"mobile" validate:"required,email"`
+        Password string `json:"password" validate:"required,password"`
+    }
+    UserLoginResq {
+        AccessToken  string `json:"accessToken"`
+        AccessExpire int64  `json:"accessExpire"`
+        RefreshAfter int64  `json:"refreshAfter"`
+    }
+)
+
+
