@@ -2,12 +2,20 @@
 package types
 
 type RegisterReq struct {
-	Mobile   string `json:"mobile"`
-	Password string `json:"password"`
+	Mobile   string `json:"mobile" validate:"required,email"`
+	Password string `json:"password" validate:"required,password"`
 }
 
 type RegisterResq struct {
 	AccessToken  string `json:"accessToken"`
 	AccessExpire int64  `json:"accessExpire"`
 	RefreshAfter int64  `json:"refreshAfter"`
+}
+
+type TestReq struct {
+	Id int64 `json:"id" validate:"required,gte=0"`
+}
+
+type TestResp struct {
+	Info string `json:"info"`
 }

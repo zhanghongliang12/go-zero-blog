@@ -21,4 +21,15 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 		},
 		rest.WithPrefix("/user/v1"),
 	)
+
+	server.AddRoutes(
+		[]rest.Route{
+			{
+				Method:  http.MethodGet,
+				Path:    "/user/hello_world",
+				Handler: user.Hello_worldHandler(serverCtx),
+			},
+		},
+		rest.WithPrefix("/user/v1"),
+	)
 }

@@ -3,8 +3,8 @@ syntax = "v1"
 
 type (
     RegisterReq {
-        Mobile string  `json:"mobile"`
-        Password string `json:"password"`
+        Mobile string  `json:"mobile" validate:"required,email"`
+        Password string `json:"password" validate:"required,password"`
     }
     RegisterResq {
         AccessToken  string `json:"accessToken"`
@@ -12,4 +12,14 @@ type (
         RefreshAfter int64  `json:"refreshAfter"`
     }
 )
+
+type (
+    TestReq {
+        Id int64 `json:"id" validate:"required,gte=0"`
+    }
+    TestResp {
+        Info string `json:"info"`
+    }
+)
+
 

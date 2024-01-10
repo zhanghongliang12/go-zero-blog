@@ -21,3 +21,13 @@ service user{
 	@handler register
 	post /user/register (RegisterReq) returns (RegisterResq)
 }
+
+@server (
+	prefix : user/v1
+	group: user
+)
+service user{
+	@doc "test"
+	@handler hello_world
+	get  /user/hello_world (TestReq) returns (TestResp)
+}
