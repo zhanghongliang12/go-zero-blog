@@ -1,13 +1,11 @@
 package svc
 
 import (
-	"go-zero-blog/user/api/internal/config"
-	"go-zero-blog/user/rpc/greetclient"
+	"go-zero-blog/demo/api/demo/internal/config"
 )
 
 type ServiceContext struct {
-	Config  config.Config
-	UserRpc greetclient.Greet
+	Config config.Config
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
