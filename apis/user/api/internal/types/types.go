@@ -11,8 +11,8 @@ type User struct {
 }
 
 type RegisterReq struct {
-	Mobile   string `json:"mobile"`
-	Password string `json:"password"`
+	Mobile   string `json:"mobile" validate:"required"`
+	Password string `json:"password" validate:"required"`
 }
 
 type RegisterResp struct {
@@ -22,8 +22,8 @@ type RegisterResp struct {
 }
 
 type LoginReq struct {
-	Mobile   string `json:"mobile"`
-	Password string `json:"password"`
+	Mobile   string `json:"mobile" validate:"required"`
+	Password string `json:"password" validate:"required"`
 }
 
 type LoginResp struct {
